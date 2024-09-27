@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
@@ -12,7 +10,11 @@ public class Player : MonoBehaviour
     private bool attacking;
     private bool jumping;
 
-    private float gravity = 9.81f;
+    [SerializeField]
+    private float jumpForce;
+
+    [SerializeField]
+    private float gravity;
 
     public float camYrotation;
 
@@ -24,15 +26,14 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float playerSpeed;
 
-    private void Update()
+
+    private void FixedUpdate()
     {
         Movement();
     }
 
     private void Movement()
     {
-        controller.Move(new Vector3(0f, -gravity * Time.deltaTime, 0f));
-
         float forwardX = Camera.main.transform.forward.x;
         float forwardZ = Camera.main.transform.forward.z;
 
@@ -41,12 +42,16 @@ public class Player : MonoBehaviour
         float totalX = forwardX * movementInput.y + rightX * movementInput.x;
         float totalZ = forwardZ * movementInput.y + rightZ * movementInput.x;
 
-        Vector3 movementVector = new Vector3(totalX * Time.deltaTime, 0f, totalZ * Time.deltaTime);
 
-        controller.Move(movementVector.normalized * playerSpeed * Time.deltaTime);
+        Vector3 movementVector = new Vector3(totalX, -gravity, totalZ);
+
+        if (jumping && controller.isGrounded)
+        {
+            movementVector += new Vector3(0f, jumpForce, 0f);
+        }
+
+        controller.Move(new Vector3(movementVector.x * playerSpeed * Time.deltaTime, movementVector.y * Time.deltaTime, movementVector.z * playerSpeed * Time.deltaTime));
     }
-
-
 
 
 
