@@ -26,13 +26,15 @@ public class ChompingPlant : GrownPlant
         {
             _chomperModel.transform.LookAt(new Vector3(other.transform.position.x, 
                 transform.position.y, other.transform.position.z));
-            ChompEnemy();
+            ChompEnemy(other.gameObject);
         }
     }
 
-    private void ChompEnemy()
+    private void ChompEnemy(GameObject enemy)
     {
         _animator.SetTrigger("ChompAttack");
+        Destroy(enemy);
+        //To-Do Spawn particles
     }
 
     public void SetCanAttackTrue()
