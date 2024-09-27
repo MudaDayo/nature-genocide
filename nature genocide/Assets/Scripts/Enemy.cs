@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody>();
 
+        transform.localScale *= UnityEngine.Random.Range(0.5f, 1f);
         hp = 2;
 
         _target = GameObject.FindGameObjectWithTag("Player");
@@ -62,6 +63,8 @@ public class Enemy : MonoBehaviour
 
         if (collision.gameObject.tag == "PlayerAttack")
         {
+            rb.linearVelocity = Vector3.zero;
+
             rb.AddForce((transform.position - collision.transform.position) * knockbackForce);
 
             TakeDamage();
