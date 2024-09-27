@@ -13,11 +13,18 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private GameObject bloodSplatter, explosion;
 
+    [SerializeField]
+    private float knockbackForce;
+
     private int hp;
+
+    private Rigidbody rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        rb = this.GetComponent<Rigidbody>();
+
         hp = 2;
 
         _target = GameObject.FindGameObjectWithTag("Player");
@@ -55,6 +62,8 @@ public class Enemy : MonoBehaviour
 
         if (collision.gameObject.tag == "PlayerAttack")
         {
+            rb.AddForce((transform.position - collision.transform.position) * knockbackForce);
+
             TakeDamage();
             Instantiate(bloodSplatter, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
 
