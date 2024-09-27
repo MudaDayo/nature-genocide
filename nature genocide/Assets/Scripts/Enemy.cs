@@ -25,6 +25,9 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         _navMeshAgent.destination = _target.transform.position;
+        this.transform.LookAt(new Vector3(_target.transform.position.x,
+               transform.position.y, _target.transform.position.z));
+
     }
 
     private void Attack(Collision collision)

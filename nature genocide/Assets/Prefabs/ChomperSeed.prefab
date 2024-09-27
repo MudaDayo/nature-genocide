@@ -527,6 +527,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3771541277208335863}
+  - component: {fileID: 120852080935605954}
   m_Layer: 0
   m_Name: ChomperSeed
   m_TagString: Untagged
@@ -555,6 +556,21 @@ Transform:
   - {fileID: 9149880984569854469}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &120852080935605954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814580913431973082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dead64c1e76bf5a4c807d14ab22c62b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _grownPlant: {fileID: 8180920230401136079, guid: 56be1b2d18ea40b4d9ad35137bcea792, type: 3}
+  _health: 100
+  _healthDecaySpeed: 5
 --- !u!1 &9008179579712699728
 GameObject:
   m_ObjectHideFlags: 0
