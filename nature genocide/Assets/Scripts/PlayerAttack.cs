@@ -6,7 +6,7 @@ public class PlayerAttack : MonoBehaviour
     private Camera playerCam;
 
     [SerializeField]
-    private GameObject attackPrefab, shovel;
+    private GameObject attackPrefab, shovel, SceneManager;
 
     private Vector3 initialShovelPos;
 
@@ -31,6 +31,11 @@ public class PlayerAttack : MonoBehaviour
         else
         {
             shovel.transform.position = this.transform.position;
+        }
+
+        if(transform.position.y <= -50f)
+        {
+            SceneManager.GetComponent<SceneManagement>().NextScene();
         }
 
         if (Input.GetMouseButtonDown(0) && !attacking)
