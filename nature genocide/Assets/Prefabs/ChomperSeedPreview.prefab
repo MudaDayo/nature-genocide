@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7306752723122681584}
   - component: {fileID: 2506542386832585291}
   - component: {fileID: 1607626530583241728}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 1510283406970323257}
   - component: {fileID: 936177227402428520}
   - component: {fileID: 6213416074734408904}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 6102940636724846971}
   - component: {fileID: 7233325828037154204}
   - component: {fileID: 587666195662355212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 4798310167560808576}
   - component: {fileID: 3097116831482198821}
   - component: {fileID: 2459510620008369228}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Soil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ GameObject:
   - component: {fileID: 7494318308535721041}
   - component: {fileID: 2399943189988756192}
   - component: {fileID: 5283842033467535354}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SeedModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -527,7 +527,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3771541277208335863}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ChomperSeedPreview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -567,7 +567,7 @@ GameObject:
   - component: {fileID: 6518877090807319375}
   - component: {fileID: 3662466418033238591}
   - component: {fileID: 2241156347581203853}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

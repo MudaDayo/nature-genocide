@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8417263101559134332}
   - component: {fileID: 4312173336883092660}
   - component: {fileID: 7491658229577723725}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FirstPersonController
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -196,6 +196,52 @@ MonoBehaviour:
   joint: {fileID: 8265706369287888890}
   bobSpeed: 10
   bobAmount: {x: 0, y: 0.1, z: 0}
+--- !u!1 &1561768124393179588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3170550006501448281}
+  - component: {fileID: 5442944855183137006}
+  m_Layer: 6
+  m_Name: AttackThing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3170550006501448281
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561768124393179588}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.75, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3957526111033841007}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5442944855183137006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561768124393179588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a272b9af8fa97ea44932b302515d4094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCam: {fileID: 6398449992763471762}
+  attackPrefab: {fileID: 1369713909830678150, guid: d96708c1fb2132b458e38bd5500dd67e, type: 3}
 --- !u!1 &1844603143618387026
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +253,7 @@ GameObject:
   - component: {fileID: 6722976642769378267}
   - component: {fileID: 5947025516919243261}
   - component: {fileID: 6173654768575375776}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StaminaBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8265706369287888890}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +360,7 @@ GameObject:
   - component: {fileID: 8745259919460950843}
   - component: {fileID: 1678662934104497509}
   - component: {fileID: 9086766961926995243}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Reticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4247214030940541048}
   - component: {fileID: 2758916483606039370}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SprintBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +485,7 @@ GameObject:
   - component: {fileID: 3957526111033841007}
   - component: {fileID: 6398449992763471762}
   - component: {fileID: 6552455024624792383}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -459,6 +505,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3170550006501448281}
   - {fileID: 6811306606829927841}
   m_Father: {fileID: 8265706369287888890}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -532,7 +579,7 @@ GameObject:
   - component: {fileID: 6811306606829927841}
   - component: {fileID: 2312888895294570189}
   - component: {fileID: 6551808511390023337}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CrosshairAndStamina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -617,7 +664,7 @@ GameObject:
   - component: {fileID: 600241094363192667}
   - component: {fileID: 5168871912224246147}
   - component: {fileID: 7062145682597935050}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stamina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
