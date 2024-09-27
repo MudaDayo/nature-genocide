@@ -5,6 +5,9 @@ public class CameraMovement : MonoBehaviour
 {
     private Vector2 movementInput;
 
+    [SerializeField]
+    private GameObject player;
+
     public float mouseSensitivity = 100f;
     //public Transform playerBody;
     float xRotation = 0f;
@@ -28,6 +31,8 @@ public class CameraMovement : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
         //playerBody.Rotate(Vector3.up * mouseX);
+
+        transform.position = player.transform.position;
     }
 
     public void OnMoveCamera(InputAction.CallbackContext context)
