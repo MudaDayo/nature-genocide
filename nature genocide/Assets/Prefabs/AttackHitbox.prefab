@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7683836940768303464}
   - component: {fileID: 4133987266630266476}
   - component: {fileID: 6656557365215562458}
-  - component: {fileID: -4466551117359699776}
+  - component: {fileID: 7961024323176532678}
   m_Layer: 9
   m_Name: AttackHitbox
   m_TagString: PlayerAttack
@@ -109,7 +109,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-4466551117359699776
+--- !u!114 &7961024323176532678
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,7 +118,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1369713909830678150}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9493dc6a27a5fb4fbdb08299fa1c155, type: 3}
+  m_Script: {fileID: 11500000, guid: f70df165ef8f4e440891658d7eab552a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 0.2
+  attackSound: {fileID: 6145277711230020479, guid: 39d52346546b3a5408275eea98ad3dc7, type: 3}

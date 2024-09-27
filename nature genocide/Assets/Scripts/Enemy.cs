@@ -5,14 +5,21 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float _health = 100f;
+    [SerializeField] private float _health = 2f;
 
-    [SerializeField] private GameObject _target;
+    [SerializeField] private GameObject _target, normalMesh, hitMesh;
+
     [SerializeField] private NavMeshAgent _navMeshAgent;
+
+    [SerializeField] private GameObject bloodSplatter, explosion;
+
+    private int hp;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        hp = 2;
+
         _target = GameObject.FindGameObjectWithTag("Player");
 
         if (_navMeshAgent == null)
@@ -38,26 +45,52 @@ public class Enemy : MonoBehaviour
             // Player.CharController push away
             // Player.TakeDamage() method
 
-            Debug.Log("Attacked");
+            //Debug.Log("Attacked");
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         Attack(collision);
+
+        if (collision.gameObject.tag == "PlayerAttack")
+        {
+            TakeDamage();
+            Instantiate(bloodSplatter, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+
+            normalMesh.SetActive(false);
+            hitMesh.SetActive(true);
+
+            //Debug.Log("Attacked");
+        }
+
+    }
+
+    void Die()
+    {
+        Instantiate(explosion, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+        Destroy(this.gameObject);
+    }
+
+    public void TakeDamage()
+    {
+        _health -= 1;
+
+        Debug.Log(_health);
+
+        if (_health <= 0f)
+        {
+            Die();
+        }
     }
 
     public virtual void TakeDamage(float damageAmount)
     {
-        _health -= damageAmount;
+        _health -= 1;
 
         if (_health <= 0f)
         {
-            // To-Do:
-            // Drop blood
-            // Particle Effect
-
-            Destroy(this.gameObject);
+            Die();
         }
     }
 }
