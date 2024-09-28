@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Meteorite : MonoBehaviour
@@ -24,7 +25,7 @@ public class Meteorite : MonoBehaviour
 
 
         transform.LookAt(_target);
-        _direction = (_target - this.transform.position);
+        _direction = (_target - new Vector3(0, 10f, 0) - this.transform.position);
         _direction.Normalize();
     }
 
@@ -32,5 +33,5 @@ public class Meteorite : MonoBehaviour
     void Update()
     {
         this.transform.position += _direction * _speed * Time.deltaTime;
-    }
+    }    
 }
