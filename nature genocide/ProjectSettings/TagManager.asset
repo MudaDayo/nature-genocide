@@ -12,6 +12,8 @@ TagManager:
   - BloodDrop
   - PlayerAttackThing
   - GrabHandHitbox
+  - Seed
+  - SeedSpawnPos
   layers:
   - Default
   - TransparentFX
