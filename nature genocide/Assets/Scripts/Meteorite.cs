@@ -10,6 +10,7 @@ public class Meteorite : MonoBehaviour
     [SerializeField] private float _speed;
 
     [SerializeField] private GameObject _tempVisualiser;
+    [SerializeField] private GameObject _damageCollision;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,7 +23,7 @@ public class Meteorite : MonoBehaviour
 
         Debug.Log(_target);
         Instantiate(_tempVisualiser, _target, Quaternion.identity);
-
+        
 
         transform.LookAt(_target);
         _direction = (_target - new Vector3(0, 10f, 0) - this.transform.position);
