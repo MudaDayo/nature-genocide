@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class NATURE : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private AudioSource nature;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            nature.Play();
+        }
     }
 }
