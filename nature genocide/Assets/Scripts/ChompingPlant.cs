@@ -6,6 +6,8 @@ public class ChompingPlant : GrownPlant
     [SerializeField] private Animator _animator;
     [SerializeField] private GameObject _chomperModel;
 
+    [SerializeField] private AudioSource purr;
+
     public bool _canAttack = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,6 +38,14 @@ public class ChompingPlant : GrownPlant
 
                 ChompEnemy(other.gameObject);
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "GrabHandHitbox")
+        {
+            purr.Play();
         }
     }
 
