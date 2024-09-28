@@ -4936,6 +4936,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _seed: {fileID: 7172201035640242453, guid: 4bf1f20b638a377478fabb99759b4291, type: 3}
   _damageCollision: {fileID: 872838541065467730, guid: a0ee7055fd4f5f8489a577ed7e8d5926, type: 3}
+  _numberOfExplosions: 5
+  _explosion: {fileID: 7276429857331333360, guid: 8ce1e93be0af00f4aa42bb99f5dd9ce9, type: 3}
 --- !u!136 &2860521477292581899
 CapsuleCollider:
   m_ObjectHideFlags: 0
