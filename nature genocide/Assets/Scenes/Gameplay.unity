@@ -1755,6 +1755,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: FirstPersonController
       objectReference: {fileID: 0}
+    - target: {fileID: 3890734852754834696, guid: a9f9d05471e6de74ebe39db5f81d4871, type: 3}
+      propertyPath: extinction
+      value: 
+      objectReference: {fileID: 8300000, guid: e9f47de9e0d08d1428a3935298569e9c, type: 3}
+    - target: {fileID: 3890734852754834696, guid: a9f9d05471e6de74ebe39db5f81d4871, type: 3}
+      propertyPath: natureClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d253ff621411b8b4da29373c111174c0, type: 3}
+    - target: {fileID: 3890734852754834696, guid: a9f9d05471e6de74ebe39db5f81d4871, type: 3}
+      propertyPath: faceThePain
+      value: 
+      objectReference: {fileID: 8300000, guid: 1c88d7b2d2dd4444dbebaa10b1ba1204, type: 3}
+    - target: {fileID: 3890734852754834696, guid: a9f9d05471e6de74ebe39db5f81d4871, type: 3}
+      propertyPath: annihilation
+      value: 
+      objectReference: {fileID: 8300000, guid: 39103b61e8f102c47b2091d56d58225a, type: 3}
+    - target: {fileID: 3890734852754834696, guid: a9f9d05471e6de74ebe39db5f81d4871, type: 3}
+      propertyPath: someOtherSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0325d5c8716e2d643a6a2e96dbc4524e, type: 3}
     - target: {fileID: 4009931032308315151, guid: a9f9d05471e6de74ebe39db5f81d4871, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
