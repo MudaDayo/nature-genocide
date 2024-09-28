@@ -268,6 +268,9 @@ MonoBehaviour:
   deathTime: 5
   knockupForce: 1000
   eaten: 0
+  knockback: 0
+  dying: 0
+  redPanelMaxtime: 0.2
   _screamOfAgony: {fileID: 8300000, guid: 7b3a928102352614cbcfcfa5f72f2831, type: 3}
   _yeahh: {fileID: 8300000, guid: 08c6697ccd3772e4f8a8395e7a20f81f, type: 3}
   _ballSqueeze: {fileID: 8300000, guid: d264eb76cd50981498891f3f9277f23b, type: 3}

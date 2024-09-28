@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1440086276493349781}
   - component: {fileID: 362608300709328046}
   - component: {fileID: 608296844133864385}
-  - component: {fileID: 8767693471435484779}
   m_Layer: 8
   m_Name: SeedModel
   m_TagString: Seed
@@ -101,15 +100,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _seedPot: {fileID: 7814580913431973082, guid: 01d03926be15dcd4da441e6ae0721a50, type: 3}
---- !u!114 &8767693471435484779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7172201035640242453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bf053e2cfb6bde45835f0c183d96ef6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
