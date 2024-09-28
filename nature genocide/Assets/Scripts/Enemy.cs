@@ -17,8 +17,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject bloodSplatter, explosion;
 
     [SerializeField]
-    private float knockbackForce;
+    private float knockbackForce, knockbackTime, deathTime, knockupForce;
 
+    private bool knockback, dying;
+    private float timer;
     private int hp;
 
     private Rigidbody rb;
@@ -44,9 +46,26 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _navMeshAgent.destination = _target.transform.position;
-        this.transform.LookAt(new Vector3(_target.transform.position.x,
-               transform.position.y, _target.transform.position.z));
+        if (knockback || dying)
+        {
+            timer += Time.deltaTime;
+        }
+        if(timer > deathTime)
+        {
+            Die();
+        }
+
+        /*if (timer > knockbackTime && knockback)
+        {
+            _navMeshAgent.enabled = true;
+        }*/
+        else if (!knockback)
+        {
+            _navMeshAgent.destination = _target.transform.position;
+            this.transform.LookAt(new Vector3(_target.transform.position.x,
+                  transform.position.y, _target.transform.position.z));
+        }
+       
     }
 
     private void Attack(Collision collision)
@@ -54,6 +73,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             hpManager.GetComponent<PlayerHP>().LoseHP();
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3 (0f, knockupForce, 0f));
         }
     }
 
@@ -63,6 +83,10 @@ public class Enemy : MonoBehaviour
 
         if (collision.gameObject.tag == "PlayerAttack")
         {
+            _navMeshAgent.enabled = false;
+
+            knockback = true;
+            dying = true;
             rb.linearVelocity = Vector3.zero;
 
             rb.AddForce((transform.position - collision.transform.position) * knockbackForce);
