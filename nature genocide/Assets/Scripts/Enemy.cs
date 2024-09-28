@@ -33,8 +33,10 @@ public class Enemy : MonoBehaviour
 
     private Rigidbody rb;
 
-    [SerializeField] private AudioClip _screamOfAgony, _yeahh;
+    [SerializeField] private AudioClip _screamOfAgony, _yeahh, _ballSqueeze, _ohGod, _yell;
     private AudioSource _audioSource;
+
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -126,7 +128,31 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "PlayerAttack")
         {
             _navMeshAgent.enabled = false;
-            _audioSource.clip = _screamOfAgony;
+            int random = UnityEngine.Random.Range(0, 10);
+
+             if (random ==  1)
+             {
+                _audioSource.clip = _ballSqueeze;
+                _audioSource.volume = 10000;
+                _audioSource.Play();
+             }
+            else if (random >= 2 && random <= 4)
+            {
+                _audioSource.clip = _screamOfAgony;
+                _audioSource.volume = 10000;
+                _audioSource.Play();
+            } else if (random >= 5 && random <= 7)
+            {
+                _audioSource.clip = _ohGod;
+                _audioSource.volume = 1000;
+                _audioSource.Play();
+            } else
+            {
+                _audioSource.clip = _yell;
+                _audioSource.volume = 1000;
+                _audioSource.Play();
+            }
+            
             _audioSource.volume = 10000;
             _audioSource.Play();
             knockback = true;
