@@ -24,7 +24,7 @@ TagManager:
   - PlayerAttackHitbox
   - Enemy
   - fpsForeground
-  - 
+  - PlayerGrabHitbox
   - 
   - 
   - 
