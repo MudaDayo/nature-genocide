@@ -4,7 +4,7 @@ using UnityEngine.Animations;
 public class ChompingPlant : GrownPlant
 {
     [SerializeField] private Animator _animator;
-    [SerializeField] private GameObject _chomperModel, HeartSplatter, greenHearts;
+    [SerializeField] private GameObject _chomperModel, HeartSplatter, greenHearts, player;
 
     [SerializeField] private AudioSource purr, CHOMP;
 
@@ -19,12 +19,22 @@ public class ChompingPlant : GrownPlant
     void Start()
     {
         UIManager = GameObject.FindGameObjectWithTag("UIManager");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
         _canAttack = true;
+
+        if(Input.GetKeyDown(KeyCode.E)) 
+        {
+            if (Vector3.Distance(player.transform.position, transform.position) < 2)
+            {
+                Instantiate(HeartSplatter, transform.position, Quaternion.identity);
+                purr.Play();
+            }
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -46,11 +56,12 @@ public class ChompingPlant : GrownPlant
                     ChompEnemy(other.gameObject);
                 }
 
-                if (other.tag == "GrabHandHitbox")
+               /* if (other.tag == "GrabHandHitbox")
                 {
+                    Debug.Log("meow");
                     Instantiate(HeartSplatter, transform.position, Quaternion.identity);
                     purr.Play();
-                }
+                }*/
             }
         }
     }
