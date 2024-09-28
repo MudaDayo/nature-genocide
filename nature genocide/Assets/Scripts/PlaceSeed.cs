@@ -28,6 +28,11 @@ public class PlaceSeed : MonoBehaviour
             Instantiate(seedPot, new Vector3(_seedSpawnPos.transform.position.x, 
                 hitInfo.point.y, _seedSpawnPos.transform.position.z), Quaternion.identity);
 
+            handGrab.SetActive(false);
+            handHoldFull.SetActive(false);
+            handHoldEmpty.SetActive(true);
+            
+
             seedPot = null;
         }
         else if (Input.GetKeyDown(KeyCode.E) && seedPot == null)

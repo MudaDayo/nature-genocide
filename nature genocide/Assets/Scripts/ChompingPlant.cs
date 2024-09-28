@@ -4,16 +4,18 @@ using UnityEngine.Animations;
 public class ChompingPlant : GrownPlant
 {
     [SerializeField] private Animator _animator;
-    [SerializeField] private GameObject _chomperModel;
+    [SerializeField] private GameObject _chomperModel, HeartSplatter;
 
-    [SerializeField] private AudioSource purr;
+    [SerializeField] private AudioSource purr, CHOMP;
+
+
 
     public bool _canAttack = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -45,7 +47,7 @@ public class ChompingPlant : GrownPlant
     {
         if (other.tag == "GrabHandHitbox")
         {
-            Debug.Log("meow");
+            Instantiate(HeartSplatter, transform.position, Quaternion.identity);
             purr.Play();
         }
     }
@@ -53,6 +55,7 @@ public class ChompingPlant : GrownPlant
     private void ChompEnemy(GameObject enemy)
     {
         _animator.SetTrigger("ChompAttack");
+        CHOMP.Play();
         Destroy(enemy);
         //To-Do Spawn particles
     }
