@@ -2,27 +2,35 @@ using UnityEngine;
 
 public class MeteoriteHit : MonoBehaviour
 {
+    [SerializeField] private GameObject _seed;
+    [SerializeField] private GameObject _damageCollision;
+
+    private GameObject _parent;
+    private Meteorite _parentScript;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        _parent = this.transform.parent.gameObject;
+        _parentScript = _parent.GetComponent<Meteorite>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Touchy wooky");
-
         if (other.gameObject.tag == "Floor")
         {
             Explode();
+            Instantiate(_seed, new Vector3(_parentScript._target.x, -3.75f, _parentScript._target.z), Quaternion.identity);
+            Instantiate(_damageCollision, new Vector3(_parentScript._target.x, -3.75f, _parentScript._target.z), Quaternion.identity);
         }
     }
+
     private void Explode()
     {
         Debug.Log("boooom");
