@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
-  _minimumDistance: 0
+  _minimumDistance: 5
   _canSpawnVisual: {fileID: 7325213316801557300}
   _cannotSpawnVisual: {fileID: 5510104886342722968}
   canSpawn: 1
