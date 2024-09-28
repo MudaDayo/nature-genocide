@@ -7,7 +7,7 @@ public class NATURE : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetButtonDown("E"))
         {
             nature.Play();
         }

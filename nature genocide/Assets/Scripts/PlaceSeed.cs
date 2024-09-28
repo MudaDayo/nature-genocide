@@ -22,7 +22,7 @@ public class PlaceSeed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && seedPot != null)
+        if (Input.GetMouseButtonDown(1) && seedPot != null)
         {
             Physics.Raycast(_rayCastStartPos.transform.position, Vector3.down, out RaycastHit hitInfo);
             Instantiate(seedPot, new Vector3(_seedSpawnPos.transform.position.x, 
