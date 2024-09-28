@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _health = 2f;
 
-    [SerializeField] private GameObject _target, normalMesh, hitMesh;
+    [SerializeField] private GameObject _target, normalMesh, hitMesh, runAnimationMesh;
 
     [SerializeField] private GameObject _bloodDrop, hpManager;
     [SerializeField] private GameObject _bloodDropSpawnPos;
@@ -33,6 +33,9 @@ public class Enemy : MonoBehaviour
 
     private Rigidbody rb;
 
+    [SerializeField] private AudioClip _screamOfAgony;
+    private AudioSource _audioSource;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -53,6 +56,11 @@ public class Enemy : MonoBehaviour
         {
             _navMeshAgent = GetComponent<NavMeshAgent>();
         }
+
+        _audioSource = GetComponent<AudioSource>();
+
+        normalMesh.SetActive(false);
+        runAnimationMesh.SetActive(true);
     }
 
     // Update is called once per frame
@@ -74,6 +82,7 @@ public class Enemy : MonoBehaviour
         }
         if(timer > deathTime)
         {
+
             Die();
         }
 
@@ -109,7 +118,9 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "PlayerAttack")
         {
             _navMeshAgent.enabled = false;
-
+            _audioSource.clip = _screamOfAgony;
+            _audioSource.volume = 10000;
+            _audioSource.Play();
             knockback = true;
             dying = true;
             rb.linearVelocity = Vector3.zero;
@@ -119,7 +130,7 @@ public class Enemy : MonoBehaviour
             TakeDamage();
             SpawnBloodEffect();
 
-            normalMesh.SetActive(false);
+            runAnimationMesh.SetActive(false);
             hitMesh.SetActive(true);
         }
     }
