@@ -270,6 +270,9 @@ MonoBehaviour:
   eaten: 0
   _screamOfAgony: {fileID: 8300000, guid: 7b3a928102352614cbcfcfa5f72f2831, type: 3}
   _yeahh: {fileID: 8300000, guid: 08c6697ccd3772e4f8a8395e7a20f81f, type: 3}
+  _ballSqueeze: {fileID: 8300000, guid: d264eb76cd50981498891f3f9277f23b, type: 3}
+  _ohGod: {fileID: 8300000, guid: ad32533b07d054f428cf7d302c0e67a0, type: 3}
+  _yell: {fileID: 8300000, guid: 21c8b2d24d21ebe4d83cdd27acda096e, type: 3}
 --- !u!136 &5395356561663702791
 CapsuleCollider:
   m_ObjectHideFlags: 0

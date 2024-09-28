@@ -13,6 +13,10 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float _timeToStartWave;
     private bool _isCountingDown = true;
     public float _waveSpawnTimer = 0f;
+
+    private float _difficultyTimer = 0f;
+    [SerializeField] private float _timeToIncreaseDifficulty;
+
     [SerializeField] private float _timeBetweenSpawns = 0.2f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,6 +40,30 @@ public class EnemySpawner : MonoBehaviour
         {
             _waveSpawnTimer += Time.deltaTime;
         }
+
+        if (_difficultyTimer < _timeToIncreaseDifficulty)
+        {
+            _difficultyTimer += Time.deltaTime;
+        }
+
+        else
+        {
+            _difficultyTimer = 0f;
+            ChangeDiffculty();
+        }
+    }
+
+    private void ChangeDiffculty()
+    {
+        if (_timeBetweenSpawns > 0.5f)
+        {
+            _timeBetweenSpawns -= 0.1f;
+        }
+
+        if (_numberOfEnemiesToSpawn < 100)
+        {
+            _numberOfEnemiesToSpawn += 5;
+        }        
     }
 
     private IEnumerator SpawnWave()
