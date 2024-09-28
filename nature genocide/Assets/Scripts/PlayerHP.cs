@@ -1,16 +1,35 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHP : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private int hearts;
+
+    [SerializeField]
+    private GameObject Heart1, Heart2;
+
+    [SerializeField]
+    private GameObject SceneManager;
+
+    private void Start()
     {
-        
+        hearts = 3;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void LoseHP()
     {
-        
+        switch (hearts) 
+        {
+            case 0:
+                SceneManager.GetComponent<SceneManagement>().NextScene();
+                break;
+
+            case 1:
+                Heart1.SetActive(false);
+                break;
+            case 2:
+                Heart2.SetActive(false);
+                break;
+        }
     }
 }

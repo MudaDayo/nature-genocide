@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private GameObject _target, normalMesh, hitMesh;
 
-    [SerializeField] private GameObject _bloodDrop;
+    [SerializeField] private GameObject _bloodDrop, hpManager;
     [SerializeField] private GameObject _bloodDropSpawnPos;
 
     [SerializeField] private NavMeshAgent _navMeshAgent;
@@ -51,11 +51,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            // To-Do:
-            // Player.CharController push away
-            // Player.TakeDamage() method
-
-            //Debug.Log("Attacked");
+            hpManager.GetComponent<PlayerHP>().LoseHP();
         }
     }
 
