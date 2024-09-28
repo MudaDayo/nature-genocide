@@ -17,16 +17,25 @@ public class ChompingPlant : GrownPlant
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Enemy")
         {
-            _chomperModel.transform.LookAt(new Vector3(other.transform.position.x, 
+            _chomperModel.transform.LookAt(new Vector3(other.transform.position.x,
                 transform.position.y, other.transform.position.z));
-            ChompEnemy(other.gameObject);
+
+            if (_canAttack)
+            {
+                _canAttack = false;
+
+                other.TryGetComponent<Enemy>(out Enemy enemyScript);
+                enemyScript.SpawnBloodEffect();
+
+                ChompEnemy(other.gameObject);
+            }
         }
     }
 
@@ -39,6 +48,7 @@ public class ChompingPlant : GrownPlant
 
     public void SetCanAttackTrue()
     {
+        Debug.Log("Can Attack");
         _canAttack = true;
     }
 }

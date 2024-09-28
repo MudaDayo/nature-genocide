@@ -70,13 +70,17 @@ public class Enemy : MonoBehaviour
             rb.AddForce((transform.position - collision.transform.position) * knockbackForce);
 
             TakeDamage();
-
-            Instantiate(_bloodDrop, _bloodDropSpawnPos.transform.position, Quaternion.identity);
-            Instantiate(bloodSplatter, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+            SpawnBloodEffect();
 
             normalMesh.SetActive(false);
             hitMesh.SetActive(true);
         }
+    }
+
+    public void SpawnBloodEffect()
+    {
+        Instantiate(_bloodDrop, _bloodDropSpawnPos.transform.position, Quaternion.identity);
+        Instantiate(bloodSplatter, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
     }
 
     void Die()
