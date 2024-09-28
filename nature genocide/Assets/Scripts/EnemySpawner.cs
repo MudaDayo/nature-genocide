@@ -61,8 +61,10 @@ public class EnemySpawner : MonoBehaviour
         // Check if spawnPosition is active
         for (bool spawnIsActive = false; spawnIsActive == true;)
         {
-            if (_spawnPositions[spawnPositionIndex].gameObject.activeSelf == true)
-            {
+            _spawnPositions[spawnPositionIndex].TryGetComponent<SpawnPoint>(out SpawnPoint spawnPointScript);
+
+            if (spawnPointScript.canSpawn == true) 
+            { 
                 spawnIsActive = true;
             }
 
