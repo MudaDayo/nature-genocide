@@ -7,7 +7,10 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] _spawnPositions;
+    [SerializeField] private GameObject[] _meteoriteSpawnPositions;
+
     [SerializeField] private GameObject[] _enemyPrefab;
+    [SerializeField] private GameObject _meteorite;
     [SerializeField] private int _numberOfEnemiesToSpawn;
 
     [SerializeField] private float _timeToStartWave;
@@ -15,6 +18,9 @@ public class EnemySpawner : MonoBehaviour
     public float _waveSpawnTimer = 0f;
 
     private float _difficultyTimer = 0f;
+    private float _meteoriteTimer = 0f;
+    [SerializeField] private float _timeForMeteoriteSpawn = 30f;
+
     [SerializeField] private float _timeToIncreaseDifficulty;
 
     [SerializeField] private float _timeBetweenSpawns = 0.2f;
@@ -50,6 +56,22 @@ public class EnemySpawner : MonoBehaviour
         {
             _difficultyTimer = 0f;
             ChangeDiffculty();
+        }
+
+        if (_meteoriteTimer < _timeForMeteoriteSpawn)
+        {
+            _meteoriteTimer += Time.deltaTime;
+        }
+
+        else
+
+        {
+            _meteoriteTimer = 0f;
+
+            System.Random rnd = new System.Random();
+            int spawnIndex = rnd.Next(0, _meteoriteSpawnPositions.Length);
+
+            Instantiate(_meteorite, _meteoriteSpawnPositions[spawnIndex].transform.position, Quaternion.identity);
         }
     }
 
