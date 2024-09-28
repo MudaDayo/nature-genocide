@@ -30,7 +30,7 @@ public class PlaceSeed : MonoBehaviour
 
             seedPot = null;
         }
-        else if (Input.GetKey(KeyCode.E) && seedPot == null)
+        else if (Input.GetKeyDown(KeyCode.E) && seedPot == null)
         {
             Instantiate(grabPrefab, transform.position, Quaternion.identity);
             handHoldEmpty.SetActive(false);
@@ -38,16 +38,15 @@ public class PlaceSeed : MonoBehaviour
             handGrab.SetActive(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.E)){
-            if(seedPot == null)
+        if (Input.GetKeyUp(KeyCode.E)){
+            handGrab.SetActive(false);
+            if (seedPot == null)
             {
                 handHoldEmpty.SetActive(true);
             }
             else if(seedPot != null) {
                 handHoldFull.SetActive(true);
             }
-            
-            handGrab.SetActive(false);
         }
     }
 }

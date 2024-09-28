@@ -15,7 +15,7 @@ public class Timer : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        float seconds = Mathf.FloorToInt(timer % 60);
+        int seconds = (int)timer;
 
         timerText.GetComponent<TextMeshProUGUI>().text = seconds.ToString();
     }

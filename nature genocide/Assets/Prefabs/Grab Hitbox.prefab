@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8015861342906781707}
   - component: {fileID: 6656557365215562458}
   - component: {fileID: -866212242324013914}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Grab Hitbox
   m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
