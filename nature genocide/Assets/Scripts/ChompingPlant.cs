@@ -36,9 +36,12 @@ public class ChompingPlant : GrownPlant
                 _canAttack = false;
 
                 other.TryGetComponent<Enemy>(out Enemy enemyScript);
-                enemyScript.SpawnBloodEffect();
 
-                ChompEnemy(other.gameObject);
+                if (enemyScript._health < 2f)
+                {
+                    enemyScript.SpawnBloodEffect();
+                    ChompEnemy(other.gameObject);
+                }               
             }
         }
     }

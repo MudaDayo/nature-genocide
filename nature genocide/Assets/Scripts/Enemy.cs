@@ -6,7 +6,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float _health = 2f;
+    [SerializeField] public float _health = 2f;
 
     [SerializeField] private GameObject _target, normalMesh, hitMesh, runAnimationMesh;
 
