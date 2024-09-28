@@ -48,6 +48,8 @@ public class PlaceSeed : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.E) && seedPot == null)
         {
+
+            ButtonPromptE.SetActive(false);
             //Physics.Raycast(_rayCastStartPos.transform.position, Vector3.down, out RaycastHit hitInfo);
 
             //GameObject grabHitBox = Instantiate(grabPrefab, new Vector3(_seedSpawnPos.transform.position.x,
