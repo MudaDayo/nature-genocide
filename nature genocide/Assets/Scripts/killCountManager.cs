@@ -10,6 +10,6 @@ public class killCountManager : MonoBehaviour
     public void AddKill()
     {
         killCount++;
-        kkText.GetComponent<TextMeshProUGUI>().text = killCount.ToString() + " KILLS";
+        kkText.GetComponent<TextMeshProUGUI>().text = killCount.ToString() + " PLANT KILLS";
     }
 }
