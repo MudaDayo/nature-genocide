@@ -152,3 +152,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeTime: 0.2
+  hpManager: {fileID: 0}
+  _knockupForce: 100
