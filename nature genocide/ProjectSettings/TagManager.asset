@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - Floor
+  - Enemy
+  - PlayerAttack
+  - Plant
+  - SeedHitbox
   layers:
   - Default
   - TransparentFX
@@ -12,12 +16,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Plant
+  - Seed
+  - PlayerAttackHitbox
+  - Enemy
+  - fpsForeground
   - 
   - 
   - 

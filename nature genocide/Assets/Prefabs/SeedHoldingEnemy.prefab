@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2021322017953468887}
   - component: {fileID: 9121791014305679707}
   - component: {fileID: 8508900224863787717}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SeedHoldingEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,4 +149,5 @@ MonoBehaviour:
   _health: 100
   _target: {fileID: 0}
   _navMeshAgent: {fileID: 0}
-  _seed: {fileID: 0}
+  _plantSeed: {fileID: 0}
+  _plantSeedPreview: {fileID: 0}

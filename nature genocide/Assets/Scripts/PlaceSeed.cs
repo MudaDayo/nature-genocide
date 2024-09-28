@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class PlaceSeed : MonoBehaviour
 {
-    public GameObject holdedSeed;
+    [SerializeField] Camera _playerCamera;
+
+    public GameObject seedPot;
     public GameObject previewHoldedSeed;
     private GameObject _previewGameObject;
 
@@ -17,13 +19,13 @@ public class PlaceSeed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.E) && holdedSeed != null)
+        if (Input.GetKeyUp(KeyCode.E) && seedPot != null)
         {
             Physics.Raycast(this.transform.position, Vector3.down, out RaycastHit hitInfo);
-            Instantiate(holdedSeed, new Vector3(this.transform.position.x, 
-                hitInfo.collider.transform.position.y + 0.2F, this.transform.position.y), Quaternion.identity);
+            Instantiate(seedPot, new Vector3(_playerCamera.transform.position.x, 
+                hitInfo.collider.transform.position.y + 0.2F, _playerCamera.transform.position.y), Quaternion.identity);
 
-            holdedSeed = null;
+            seedPot = null;
         }
     }
 }

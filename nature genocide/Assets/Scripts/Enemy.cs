@@ -5,14 +5,29 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float _health = 100f;
+    [SerializeField] private float _health = 2f;
 
-    [SerializeField] private GameObject _target;
+    [SerializeField] private GameObject _target, normalMesh, hitMesh;
+
     [SerializeField] private NavMeshAgent _navMeshAgent;
+
+    [SerializeField] private GameObject bloodSplatter, explosion;
+
+    [SerializeField]
+    private float knockbackForce;
+
+    private int hp;
+
+    private Rigidbody rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        rb = this.GetComponent<Rigidbody>();
+
+        transform.localScale *= UnityEngine.Random.Range(0.5f, 1f);
+        hp = 2;
+
         _target = GameObject.FindGameObjectWithTag("Player");
 
         if (_navMeshAgent == null)
@@ -25,6 +40,9 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         _navMeshAgent.destination = _target.transform.position;
+        this.transform.LookAt(new Vector3(_target.transform.position.x,
+               transform.position.y, _target.transform.position.z));
+
     }
 
     private void Attack(Collision collision)
@@ -35,26 +53,56 @@ public class Enemy : MonoBehaviour
             // Player.CharController push away
             // Player.TakeDamage() method
 
-            Debug.Log("Attacked");
+            //Debug.Log("Attacked");
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         Attack(collision);
+
+        if (collision.gameObject.tag == "PlayerAttack")
+        {
+            rb.linearVelocity = Vector3.zero;
+
+            rb.AddForce((transform.position - collision.transform.position) * knockbackForce);
+
+            TakeDamage();
+            Instantiate(bloodSplatter, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+
+            normalMesh.SetActive(false);
+            hitMesh.SetActive(true);
+
+            //Debug.Log("Attacked");
+        }
+
+    }
+
+    void Die()
+    {
+        Instantiate(explosion, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+        Destroy(this.gameObject);
+    }
+
+    public void TakeDamage()
+    {
+        _health -= 1;
+
+        Debug.Log(_health);
+
+        if (_health <= 0f)
+        {
+            Die();
+        }
     }
 
     public virtual void TakeDamage(float damageAmount)
     {
-        _health -= damageAmount;
+        _health -= 1;
 
         if (_health <= 0f)
         {
-            // To-Do:
-            // Drop blood
-            // Particle Effect
-
-            Destroy(this.gameObject);
+            Die();
         }
     }
 }
