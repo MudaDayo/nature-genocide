@@ -373,6 +373,7 @@ MonoBehaviour:
   playerCam: {fileID: 6398449992763471762}
   attackPrefab: {fileID: 1369713909830678150, guid: d96708c1fb2132b458e38bd5500dd67e, type: 3}
   shovel: {fileID: 5986427743668246916}
+  SceneManager: {fileID: 0}
   attackTimer: 0.2
 --- !u!1 &1844603143618387026
 GameObject:
@@ -904,7 +905,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3645462348123204120}
   - component: {fileID: 5539875058898345093}
-  - component: {fileID: 3563633496888380628}
   m_Layer: 6
   m_Name: TopCamera
   m_TagString: Untagged
@@ -978,14 +978,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &3563633496888380628
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8231016012154120354}
-  m_Enabled: 1
 --- !u!1001 &1743926899538318376
 PrefabInstance:
   m_ObjectHideFlags: 0
