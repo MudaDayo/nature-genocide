@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class PlaceSeed : MonoBehaviour
 {
-    [SerializeField] Camera _playerCamera;
+    [SerializeField] GameObject _rayCastStartPos;
+    [SerializeField] GameObject _seedSpawnPos;
 
     public GameObject seedPot;
     public GameObject previewHoldedSeed;
@@ -21,9 +22,9 @@ public class PlaceSeed : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.E) && seedPot != null)
         {
-            Physics.Raycast(_playerCamera.transform.position, Vector3.down, out RaycastHit hitInfo);
-            Instantiate(seedPot, new Vector3(_playerCamera.transform.position.x, 
-                hitInfo.point.y, _playerCamera.transform.position.y), Quaternion.identity);
+            Physics.Raycast(_rayCastStartPos.transform.position, Vector3.down, out RaycastHit hitInfo);
+            Instantiate(seedPot, new Vector3(_seedSpawnPos.transform.position.x, 
+                hitInfo.point.y, _seedSpawnPos.transform.position.z), Quaternion.identity);
 
             seedPot = null;
         }

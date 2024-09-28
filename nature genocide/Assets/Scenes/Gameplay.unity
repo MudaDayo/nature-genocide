@@ -1308,38 +1308,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 434842590797825145, guid: a9f9d05471e6de74ebe39db5f81d4871, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1694491026348762399}
     - targetCorrespondingSourceObject: {fileID: 8231016012154120354, guid: a9f9d05471e6de74ebe39db5f81d4871, type: 3}
       insertIndex: -1
       addedObject: {fileID: 844788158}
   m_SourcePrefab: {fileID: 100100000, guid: a9f9d05471e6de74ebe39db5f81d4871, type: 3}
---- !u!1 &1694491026348762398 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 434842590797825145, guid: a9f9d05471e6de74ebe39db5f81d4871, type: 3}
-  m_PrefabInstance: {fileID: 1694491026348762397}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1694491026348762399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1694491026348762398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a05e4f1e20cf08845b4294485450990b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerCamera: {fileID: 1694491026348762400}
-  seedPot: {fileID: 7814580913431973082, guid: 01d03926be15dcd4da441e6ae0721a50, type: 3}
-  previewHoldedSeed: {fileID: 0}
---- !u!20 &1694491026348762400 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 6398449992763471762, guid: a9f9d05471e6de74ebe39db5f81d4871, type: 3}
-  m_PrefabInstance: {fileID: 1694491026348762397}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
