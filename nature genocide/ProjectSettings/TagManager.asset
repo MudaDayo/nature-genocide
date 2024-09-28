@@ -10,6 +10,7 @@ TagManager:
   - Plant
   - SeedHitbox
   - BloodDrop
+  - PlayerAttackThing
   layers:
   - Default
   - TransparentFX
