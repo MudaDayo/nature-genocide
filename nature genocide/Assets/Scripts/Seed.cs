@@ -38,6 +38,8 @@ public class Seed : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        Debug.Log("Something entered Seed");
+
         if (other.gameObject.tag == "BloodDrop" && _grownPlantHasGrown == false)
         {
             _grownPlantHasGrown = true;
