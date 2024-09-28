@@ -5,8 +5,8 @@ public class SpawnPoint : MonoBehaviour
     [SerializeField] private GameObject _player;
     [SerializeField] private float _minimumDistance;
 
-    [SerializeField] private GameObject _canSpawnVisual;
-    [SerializeField] private GameObject _cannotSpawnVisual;
+    // [SerializeField] private GameObject _canSpawnVisual;
+    // [SerializeField] private GameObject _cannotSpawnVisual;
 
     public bool canSpawn = true;
 
