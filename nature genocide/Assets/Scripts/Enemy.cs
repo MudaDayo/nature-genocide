@@ -103,7 +103,7 @@ public class Enemy : MonoBehaviour
 
     private void Attack(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && dying == false)
         {
             UIManager.GetComponent<redPanel>().Enable();
             redBool = true;
