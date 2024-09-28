@@ -20,9 +20,7 @@ public class Meteorite : MonoBehaviour
         Physics.Raycast(_player.transform.position, Vector3.down, out RaycastHit hitInfo);
         _target = new Vector3(_player.transform.position.x, hitInfo.point.y, _player.transform.position.z);
 
-        Debug.Log(_target);
-        Instantiate(_tempVisualiser, _target, Quaternion.identity);
-        
+        Debug.Log(_target);        
 
         transform.LookAt(_target);
         _direction = (_target - new Vector3(0, 10f, 0) - this.transform.position);
