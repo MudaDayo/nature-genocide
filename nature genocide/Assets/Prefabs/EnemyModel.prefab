@@ -260,7 +260,7 @@ MonoBehaviour:
   _navMeshAgent: {fileID: 5825384448982588797}
   bloodSplatter: {fileID: 6547642865249840430, guid: 221116ffcd6e50444937910cb20331ee, type: 3}
   explosion: {fileID: 7276429857331333360, guid: 8ce1e93be0af00f4aa42bb99f5dd9ce9, type: 3}
-  knockbackForce: 200
+  knockbackForce: 1000
   knockbackTime: 2
   deathTime: 5
   knockupForce: 1000

@@ -56,9 +56,7 @@ public class ChompingPlant : GrownPlant
     {
         _animator.SetTrigger("ChompAttack");
         CHOMP.Play();
-        enemy.GetComponent<Enemy>().eaten = true;
-        enemy.GetComponent<Enemy>().Die();
-
+        Destroy(enemy);
         //To-Do Spawn particles
     }
 
