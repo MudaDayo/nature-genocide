@@ -4,11 +4,11 @@ using UnityEngine.Animations;
 public class ChompingPlant : GrownPlant
 {
     [SerializeField] private Animator _animator;
-    [SerializeField] private GameObject _chomperModel, HeartSplatter;
+    [SerializeField] private GameObject _chomperModel, HeartSplatter, greenHearts;
 
     [SerializeField] private AudioSource purr, CHOMP;
 
-
+    public float scaleFactor;
 
     public bool _canAttack = true;
 
@@ -58,6 +58,9 @@ public class ChompingPlant : GrownPlant
         CHOMP.Play();
         enemy.GetComponent<Enemy>().eaten = true;
         enemy.GetComponent<Enemy>().Die();
+
+        Instantiate(greenHearts, transform.position, Quaternion.identity);
+        transform.localScale *= scaleFactor;
 
         //To-Do Spawn particles
     }
