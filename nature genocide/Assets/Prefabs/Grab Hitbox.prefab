@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -866212242324013914}
   m_Layer: 12
   m_Name: Grab Hitbox
-  m_TagString: PlayerAttack
+  m_TagString: GrabHandHitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -45,6 +45,7 @@ public class ChompingPlant : GrownPlant
     {
         if (other.tag == "GrabHandHitbox")
         {
+            Debug.Log("meow");
             purr.Play();
         }
     }
