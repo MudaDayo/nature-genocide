@@ -76,6 +76,7 @@ public class ChompingPlant : GrownPlant
         enemy.GetComponent<Enemy>().Die();
 
         Instantiate(greenHearts, transform.position, Quaternion.identity);
+        
         transform.localScale *= scaleFactor;
 
         //To-Do Spawn particles
