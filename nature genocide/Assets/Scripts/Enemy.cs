@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
 
     private Rigidbody rb;
 
-    [SerializeField] private AudioClip _screamOfAgony;
+    [SerializeField] private AudioClip _screamOfAgony, _yeahh;
     private AudioSource _audioSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -111,6 +111,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+      if (other.gameObject.tag == "Player")
+        {
+            _audioSource.clip = _yeahh;
+            _audioSource.Play();
+        }   
+    }
     private void OnCollisionEnter(Collision collision)
     {
         Attack(collision);
