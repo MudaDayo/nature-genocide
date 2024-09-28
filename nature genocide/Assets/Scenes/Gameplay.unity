@@ -1030,7 +1030,7 @@ GameObject:
   - component: {fileID: 1453725188}
   m_Layer: 5
   m_Name: RED
-  m_TagString: Untagged
+  m_TagString: redPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1103,9 +1103,10 @@ GameObject:
   - component: {fileID: 1478172061}
   - component: {fileID: 1478172060}
   - component: {fileID: 1478172062}
+  - component: {fileID: 1478172063}
   m_Layer: 0
-  m_Name: Ui manager
-  m_TagString: Untagged
+  m_Name: UI manager
+  m_TagString: UIManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1153,6 +1154,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killCount: 0
   kkText: {fileID: 1063138812}
+--- !u!114 &1478172063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478172059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267ee7352b5f8ce4aaf4b71de7bbb5f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  red: {fileID: 1453725186}
 --- !u!1 &1596590411
 GameObject:
   m_ObjectHideFlags: 0

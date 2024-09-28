@@ -12,6 +12,8 @@ TagManager:
   - BloodDrop
   - PlayerAttackThing
   - GrabHandHitbox
+  - UIManager
+  - redPanel
   layers:
   - Default
   - TransparentFX

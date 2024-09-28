@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEngine.GraphicsBuffer;
 
 
 public class Enemy : MonoBehaviour
@@ -14,7 +15,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private NavMeshAgent _navMeshAgent;
 
-    [SerializeField] private GameObject bloodSplatter, explosion;
+    [SerializeField] private GameObject bloodSplatter, explosion, redPanel;
 
     [SerializeField]
     private float knockbackForce, knockbackTime, deathTime, knockupForce;
@@ -24,6 +25,10 @@ public class Enemy : MonoBehaviour
     private float timer;
     private int hp;
 
+    private bool redBool;
+    private float redPanelTimer;
+    private float redPanelMaxtime;
+
     private GameObject UIManager;
 
     private Rigidbody rb;
@@ -31,6 +36,8 @@ public class Enemy : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        redPanelMaxtime = 0.2f;
+        eaten = false;
         rb = this.GetComponent<Rigidbody>();
 
         transform.localScale *= UnityEngine.Random.Range(0.5f, 1f);
@@ -40,7 +47,7 @@ public class Enemy : MonoBehaviour
 
         hpManager = GameObject.Find("HeartManager");
 
-        UIManager = GameObject.Find("UIManager");
+        UIManager = GameObject.FindGameObjectWithTag("UIManager");
 
         if (_navMeshAgent == null)
         {
@@ -51,6 +58,16 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (redBool)
+        {
+            redPanelTimer += Time.deltaTime;
+        }
+        if (redPanelTimer > redPanelMaxtime)
+        {
+            redBool = false;
+            UIManager.GetComponent<redPanel>().Disable();
+        }
+
         if (knockback || dying)
         {
             timer += Time.deltaTime;
@@ -77,6 +94,9 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            UIManager.GetComponent<redPanel>().Enable();
+            redBool = true;
+
             hpManager.GetComponent<PlayerHP>().LoseHP();
             collision.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3 (0f, knockupForce, 0f));
         }
@@ -117,7 +137,6 @@ public class Enemy : MonoBehaviour
         if (!eaten)
         {
             Instantiate(explosion, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
-
         }
 
         Destroy(this.gameObject);
