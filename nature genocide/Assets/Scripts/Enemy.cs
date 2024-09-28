@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
 
     private bool redBool;
     private float redPanelTimer;
-    private float redPanelMaxtime;
+    public float redPanelMaxtime;
 
     private GameObject UIManager;
 

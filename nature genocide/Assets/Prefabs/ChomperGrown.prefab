@@ -1779,9 +1779,10 @@ MonoBehaviour:
   _chomperModel: {fileID: 5328595647140671198}
   HeartSplatter: {fileID: 6547642865249840430, guid: 6fa60847d92953649b48ffaa003bc5a4, type: 3}
   greenHearts: {fileID: 6547642865249840430, guid: f9af83498aa38b64c9bb49cbed2d643d, type: 3}
+  player: {fileID: 0}
   purr: {fileID: 5327313064828223756}
   CHOMP: {fileID: 2428190749035015870}
-  scaleFactor: 1.05
+  scaleFactor: 1.2
   _canAttack: 1
 --- !u!95 &4339791118770827147
 Animator:
