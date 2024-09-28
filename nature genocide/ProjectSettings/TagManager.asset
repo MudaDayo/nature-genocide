@@ -14,6 +14,7 @@ TagManager:
   - GrabHandHitbox
   - UIManager
   - redPanel
+  - Seed
   layers:
   - Default
   - TransparentFX

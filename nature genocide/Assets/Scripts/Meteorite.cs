@@ -4,7 +4,7 @@ using UnityEngine;
 public class Meteorite : MonoBehaviour
 {
     private GameObject _player;
-    private Vector3 _target;
+    public Vector3 _target;
     private Vector3 _direction;
 
     [SerializeField] private float _speed;
