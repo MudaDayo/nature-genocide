@@ -44,17 +44,14 @@ public class ChompingPlant : GrownPlant
                 {
                     enemyScript.SpawnBloodEffect();
                     ChompEnemy(other.gameObject);
-                }               
-            }
-        }
-    }
+                }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "GrabHandHitbox")
-        {
-            Instantiate(HeartSplatter, transform.position, Quaternion.identity);
-            purr.Play();
+                if (other.tag == "GrabHandHitbox")
+                {
+                    Instantiate(HeartSplatter, transform.position, Quaternion.identity);
+                    purr.Play();
+                }
+            }
         }
     }
 
