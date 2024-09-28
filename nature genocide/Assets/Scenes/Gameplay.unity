@@ -1047,7 +1047,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -24.043}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 733, y: 356}
+  m_AnchoredPosition: {x: 802, y: 313}
   m_SizeDelta: {x: 502.9, y: 202.836}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1063138814
@@ -1070,7 +1070,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0 KILLS
+  m_text: 0 PLANT KILLS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 31ca72e5f571c614ca4d535e89932b12, type: 2}
   m_sharedMaterial: {fileID: -6682429642795498479, guid: 31ca72e5f571c614ca4d535e89932b12, type: 2}
@@ -1135,7 +1135,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -94.89722, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1921,6 +1921,7 @@ MonoBehaviour:
   _numberOfEnemiesToSpawn: 50
   _timeToStartWave: 0
   _waveSpawnTimer: 2
+  _timeToIncreaseDifficulty: 15
   _timeBetweenSpawns: 3
 --- !u!4 &1910545285
 Transform:
