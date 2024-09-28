@@ -4935,6 +4935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _seed: {fileID: 7172201035640242453, guid: 4bf1f20b638a377478fabb99759b4291, type: 3}
+  _damageCollision: {fileID: 872838541065467730, guid: a0ee7055fd4f5f8489a577ed7e8d5926, type: 3}
 --- !u!136 &2860521477292581899
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5293,9 +5294,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 983ecab405b91584782a58d4f632e5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _target: {x: 0, y: 0, z: 0}
   _speed: 20
   _tempVisualiser: {fileID: 1427830293881911416, guid: 4d2b8f5b56d5bd342a494fa9de832584, type: 3}
-  _damageCollision: {fileID: 872838541065467730, guid: a0ee7055fd4f5f8489a577ed7e8d5926, type: 3}
 --- !u!1 &7446719678883075207
 GameObject:
   m_ObjectHideFlags: 0

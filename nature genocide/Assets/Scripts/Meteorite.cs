@@ -10,7 +10,6 @@ public class Meteorite : MonoBehaviour
     [SerializeField] private float _speed;
 
     [SerializeField] private GameObject _tempVisualiser;
-    [SerializeField] private GameObject _damageCollision;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

@@ -3,6 +3,8 @@ using UnityEngine;
 public class MeteoriteHit : MonoBehaviour
 {
     [SerializeField] private GameObject _seed;
+    [SerializeField] private GameObject _damageCollision;
+
     private GameObject _parent;
     private Meteorite _parentScript;
 
@@ -25,6 +27,7 @@ public class MeteoriteHit : MonoBehaviour
         {
             Explode();
             Instantiate(_seed, new Vector3(_parentScript._target.x, -3.75f, _parentScript._target.z), Quaternion.identity);
+            Instantiate(_damageCollision, new Vector3(_parentScript._target.x, -3.75f, _parentScript._target.z), Quaternion.identity);
         }
     }
 
