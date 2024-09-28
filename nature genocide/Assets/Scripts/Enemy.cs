@@ -19,9 +19,12 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float knockbackForce, knockbackTime, deathTime, knockupForce;
 
+    public bool eaten;
     private bool knockback, dying;
     private float timer;
     private int hp;
+
+    private GameObject UIManager;
 
     private Rigidbody rb;
 
@@ -36,6 +39,8 @@ public class Enemy : MonoBehaviour
         _target = GameObject.FindGameObjectWithTag("Player");
 
         hpManager = GameObject.Find("HeartManager");
+
+        UIManager = GameObject.Find("UIManager");
 
         if (_navMeshAgent == null)
         {
@@ -105,9 +110,16 @@ public class Enemy : MonoBehaviour
         Instantiate(bloodSplatter, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
     }
 
-    void Die()
+    public void Die()
     {
-        Instantiate(explosion, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+        UIManager.GetComponent<killCountManager>().AddKill();
+
+        if (!eaten)
+        {
+            Instantiate(explosion, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+
+        }
+
         Destroy(this.gameObject);
     }
 
