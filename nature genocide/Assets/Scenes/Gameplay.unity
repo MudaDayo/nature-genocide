@@ -1921,6 +1921,7 @@ MonoBehaviour:
   _numberOfEnemiesToSpawn: 50
   _timeToStartWave: 0
   _waveSpawnTimer: 2
+  _timeToIncreaseDifficulty: 15
   _timeBetweenSpawns: 3
 --- !u!4 &1910545285
 Transform:
