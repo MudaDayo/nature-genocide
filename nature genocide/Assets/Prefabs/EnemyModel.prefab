@@ -207,6 +207,7 @@ Transform:
   m_Children:
   - {fileID: 6124862233792419064}
   - {fileID: 5806480129479965690}
+  - {fileID: 378430362260192612}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2635184472376322639
@@ -252,6 +253,8 @@ MonoBehaviour:
   _target: {fileID: 0}
   normalMesh: {fileID: 4216746441645278197}
   hitMesh: {fileID: 2475011203885830518}
+  _bloodDrop: {fileID: 1977605820248049952, guid: b33ba8c711be61b498b0b1b23c910ee0, type: 3}
+  _bloodDropSpawnPos: {fileID: 5805011226545633255}
   _navMeshAgent: {fileID: 5825384448982588797}
   bloodSplatter: {fileID: 6547642865249840430, guid: 221116ffcd6e50444937910cb20331ee, type: 3}
   explosion: {fileID: 7276429857331333360, guid: 8ce1e93be0af00f4aa42bb99f5dd9ce9, type: 3}
@@ -1675,6 +1678,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5805011226545633255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 378430362260192612}
+  m_Layer: 10
+  m_Name: BloodDropSpawnPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &378430362260192612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5805011226545633255}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3062750869460163130}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6034567810988799490
 GameObject:
   m_ObjectHideFlags: 0

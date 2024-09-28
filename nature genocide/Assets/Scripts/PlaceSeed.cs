@@ -21,9 +21,9 @@ public class PlaceSeed : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.E) && seedPot != null)
         {
-            Physics.Raycast(this.transform.position, Vector3.down, out RaycastHit hitInfo);
+            Physics.Raycast(_playerCamera.transform.position, Vector3.down, out RaycastHit hitInfo);
             Instantiate(seedPot, new Vector3(_playerCamera.transform.position.x, 
-                hitInfo.collider.transform.position.y + 0.2F, _playerCamera.transform.position.y), Quaternion.identity);
+                hitInfo.point.y, _playerCamera.transform.position.y), Quaternion.identity);
 
             seedPot = null;
         }

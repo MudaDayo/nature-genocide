@@ -9,6 +9,9 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private GameObject _target, normalMesh, hitMesh;
 
+    [SerializeField] private GameObject _bloodDrop;
+    [SerializeField] private GameObject _bloodDropSpawnPos;
+
     [SerializeField] private NavMeshAgent _navMeshAgent;
 
     [SerializeField] private GameObject bloodSplatter, explosion;
@@ -42,7 +45,6 @@ public class Enemy : MonoBehaviour
         _navMeshAgent.destination = _target.transform.position;
         this.transform.LookAt(new Vector3(_target.transform.position.x,
                transform.position.y, _target.transform.position.z));
-
     }
 
     private void Attack(Collision collision)
@@ -68,14 +70,13 @@ public class Enemy : MonoBehaviour
             rb.AddForce((transform.position - collision.transform.position) * knockbackForce);
 
             TakeDamage();
+
+            Instantiate(_bloodDrop, _bloodDropSpawnPos.transform.position, Quaternion.identity);
             Instantiate(bloodSplatter, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
 
             normalMesh.SetActive(false);
             hitMesh.SetActive(true);
-
-            //Debug.Log("Attacked");
         }
-
     }
 
     void Die()
@@ -84,21 +85,12 @@ public class Enemy : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    public void TakeDamage()
+    public virtual void TakeDamage()
     {
         _health -= 1;
 
         Debug.Log(_health);
 
-        if (_health <= 0f)
-        {
-            Die();
-        }
-    }
-
-    public virtual void TakeDamage(float damageAmount)
-    {
-        _health -= 1;
 
         if (_health <= 0f)
         {
