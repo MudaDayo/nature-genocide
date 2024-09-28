@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHP : MonoBehaviour
 {
+    [SerializeField]
     private int hearts;
 
     [SerializeField]
@@ -18,6 +19,9 @@ public class PlayerHP : MonoBehaviour
 
     public void LoseHP()
     {
+
+        hearts--;
+
         switch (hearts) 
         {
             case 0:

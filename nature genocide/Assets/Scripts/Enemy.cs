@@ -33,6 +33,8 @@ public class Enemy : MonoBehaviour
 
         _target = GameObject.FindGameObjectWithTag("Player");
 
+        hpManager = GameObject.Find("HeartManager");
+
         if (_navMeshAgent == null)
         {
             _navMeshAgent = GetComponent<NavMeshAgent>();

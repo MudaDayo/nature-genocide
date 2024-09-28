@@ -860,8 +860,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c996a137c81e6346af3f22a63ef24a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Heart1: {fileID: 1387047487}
-  Heart2: {fileID: 846103442}
+  hearts: 0
+  Heart1: {fileID: 846103442}
+  Heart2: {fileID: 1387047487}
   SceneManager: {fileID: 1090013765}
 --- !u!4 &1434277793
 Transform:
