@@ -61,7 +61,9 @@ public class EnemySpawner : MonoBehaviour
         // Check if spawnPosition is active
         for (bool spawnIsActive = false; spawnIsActive == true;)
         {
-            if (_spawnPositions[spawnPositionIndex].gameObject.activeSelf == true)
+            _spawnPositions[spawnPositionIndex].TryGetComponent<SpawnPoint>(out SpawnPoint spawnPointScript);
+
+            if (spawnPointScript.canSpawn == true)
             {
                 spawnIsActive = true;
             }
@@ -71,7 +73,6 @@ public class EnemySpawner : MonoBehaviour
                 spawnPositionIndex = rnd.Next(0, _spawnPositions.Length - 1);
             }
         }
-
         Instantiate(_enemyPrefab[enemyIndex], _spawnPositions[spawnPositionIndex].transform.position, Quaternion.identity);
     }
 }
