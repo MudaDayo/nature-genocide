@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     private float knockbackForce, knockbackTime, deathTime, knockupForce;
 
     public bool eaten;
-    private bool knockback, dying;
+    public bool knockback, dying;
     private float timer;
     private int hp;
 
@@ -103,7 +103,7 @@ public class Enemy : MonoBehaviour
 
     private void Attack(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && dying == false)
         {
             UIManager.GetComponent<redPanel>().Enable();
             redBool = true;
@@ -177,7 +177,7 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
-        UIManager.GetComponent<killCountManager>().AddKill();
+        //UIManager.GetComponent<killCountManager>().AddKill();
 
         if (!eaten)
         {

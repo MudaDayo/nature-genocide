@@ -12,16 +12,19 @@ public class ChompingPlant : GrownPlant
 
     public bool _canAttack = true;
 
+    private GameObject UIManager;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        UIManager = GameObject.FindGameObjectWithTag("UIManager");
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        _canAttack = true;
     }
 
     private void OnTriggerStay(Collider other)
@@ -37,26 +40,25 @@ public class ChompingPlant : GrownPlant
 
                 other.TryGetComponent<Enemy>(out Enemy enemyScript);
 
-                if (enemyScript._health < 2f)
+                if (enemyScript.dying)
                 {
                     enemyScript.SpawnBloodEffect();
                     ChompEnemy(other.gameObject);
-                }               
-            }
-        }
-    }
+                }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "GrabHandHitbox")
-        {
-            Instantiate(HeartSplatter, transform.position, Quaternion.identity);
-            purr.Play();
+                if (other.tag == "GrabHandHitbox")
+                {
+                    Instantiate(HeartSplatter, transform.position, Quaternion.identity);
+                    purr.Play();
+                }
+            }
         }
     }
 
     private void ChompEnemy(GameObject enemy)
     {
+        UIManager.GetComponent<killCountManager>().AddKill();
+
         _animator.SetTrigger("ChompAttack");
         CHOMP.Play();
         enemy.GetComponent<Enemy>().eaten = true;
