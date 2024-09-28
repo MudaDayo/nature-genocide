@@ -51,7 +51,7 @@ public class MeteoriteHit : MonoBehaviour
         Debug.Log("Spawned Explosion");
         Vector3 randomSpawnPos = UnityEngine.Random.insideUnitSphere * 5;
 
-        Instantiate(_explosion, this.transform.position + 2 * randomSpawnPos + new Vector3(0f, 7f, 0f), Quaternion.identity);
+        Instantiate(_explosion, this.transform.position + randomSpawnPos + new Vector3(0f, 7f, 0f), Quaternion.identity);
     }
 
     private IEnumerator Explode()
